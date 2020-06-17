@@ -34,7 +34,7 @@ const initialFormErrors = {
   civil: '',
 }
 const initialFriends = []
-const initialDisabled = true
+const initialDisabled = false
 
 
 export default function App() {
@@ -99,6 +99,14 @@ export default function App() {
     // a) pull the `name` of the checkbox from the event
     // b) pull whether `checked` true or false, from the event
     // c) set a new state for the whole form
+    const { name, checked } = evt.target
+    setFormValues({
+      ...formValues,
+      hobbies: {
+        ...formValues.hobbies, 
+        [name]: checked
+      }
+    })
   }
 
   const onSubmit = evt => {
@@ -107,9 +115,10 @@ export default function App() {
     const newFriend = {
       username: formValues.username.trim(),
       email: formValues.email.trim(),
-      role: formValues.role.trim(),
-      civil: formValues.civil.trim(),
+      role: formValues.role,
+      civil: formValues.civil,
       // 🔥 STEP 8- WHAT ABOUT HOBBIES?
+      hobbies: formValues.hobbies.
     }
     // 🔥 STEP 9- POST NEW FRIEND USING HELPER
   }
