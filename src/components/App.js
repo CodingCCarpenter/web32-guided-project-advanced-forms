@@ -25,10 +25,10 @@ const initialFormValues = {
   },
 }
 const initialFormErrors = {
-  username: 'Please enter a valid username!',
-  email: 'Please enter a valid email address!',
-  role: 'Role is required!',
-  civil: 'Civil Status required',
+  username: '',
+  email: '',
+  role: '',
+  civil: '',
 }
 const initialFriends = []
 const initialDisabled = true
