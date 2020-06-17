@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Friend from './Friend'
 import FriendForm from './FriendForm'
 // 🔥 STEP 1- CHECK THE ENDPOINTS USING POSTMAN OR HTTPIE
-// 🔥 STEP 2- FLESH OUT FriendForm.jsx
+// 🔥  2- FLESH OUT FriendForm.jsx
 // 🔥 STEP 3- FLESH THE SCHEMA IN ITS OWN FILE
 // 🔥 STEP 4- IMPORT THE SCHEMA, AXIOS AND YUP
 

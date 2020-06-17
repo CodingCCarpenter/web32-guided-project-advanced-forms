@@ -68,9 +68,21 @@ export default function FriendForm(props) {
         {/* ////////// RADIO BUTTONS ////////// */}
         {/* ////////// RADIO BUTTONS ////////// */}
         <label>Single
-
+          <input
+            checked={values.civil === 'single'}
+            value='single'
+            onChange={onInputChange}
+            name='civil'
+            type='radio'
+            />
         </label>
-
+        <input
+            checked={values.civil === 'married'}
+            value='married'
+            onChange={onInputChange}
+            name='married'
+            type='radio'
+            />
         <label>Married
 
         </label>
