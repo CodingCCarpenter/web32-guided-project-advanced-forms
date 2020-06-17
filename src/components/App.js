@@ -119,6 +119,9 @@ export default function App() {
       civil: formValues.civil,
       // 🔥 STEP 8- WHAT ABOUT HOBBIES?
       hobbies: Object.keys(formValues.hobbies)
+        .filter(hobbyName => {
+          return formValues[hobbyName]
+      })
     }
     // 🔥 STEP 9- POST NEW FRIEND USING HELPER
   }
