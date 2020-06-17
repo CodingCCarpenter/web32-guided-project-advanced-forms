@@ -58,6 +58,7 @@ export default function App() {
       })
       .catch(err => {
         debugger
+        console.log(err)
       })
   }
 
@@ -65,6 +66,17 @@ export default function App() {
     // 🔥 STEP 6- IMPLEMENT! ON SUCCESS ADD NEWLY CREATED FRIEND TO STATE
     //    helper to [POST] `newFriend` to `http://localhost:4000/friends`
     //    and regardless of success or failure, the form should reset
+    axios.post('http://localhost:4000/friends', newFriend)
+      .then(res => {
+        setFriends([ ...friends, res.data ])
+      })
+      .catch(err => {
+        debugger
+        console.log(err)
+      })
+      .finally(
+        setFormValues(initialFormValues)
+      )
   }
 
   //////////////// EVENT HANDLERS ////////////////
