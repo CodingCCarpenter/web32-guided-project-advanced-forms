@@ -34,7 +34,7 @@ const initialFormErrors = {
   civil: '',
 }
 const initialFriends = []
-const initialDisabled = false
+const initialDisabled = true
 
 
 export default function App() {
@@ -117,7 +117,7 @@ export default function App() {
       civil: formValues.civil,
       // 🔥 STEP 8- WHAT ABOUT HOBBIES?
       hobbies: Object.keys(formValues.hobbies)
-        .filter(hobbieName => (formValues[hobbieName] === true))
+        .filter(hobbieName => (formValues.hobbies[hobbieName] === true))
     }
     // 🔥 STEP 9- POST NEW FRIEND USING HELPER
     postNewFriend(newFriend)
@@ -132,7 +132,10 @@ export default function App() {
 
   useEffect(() => {
     // 🔥 STEP 10- ADJUST THE STATUS OF `disabled` EVERY TIME `formValues` CHANGES
-  }, [])
+    formSchema.isValid(formValues).then(valid => {
+      setDisabled(!valid)
+    })
+  }, [formValues])
 
   return (
     <div className='container'>
