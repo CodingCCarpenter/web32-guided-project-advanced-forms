@@ -16,7 +16,7 @@ export default function FriendForm(props) {
         <h2>Add a Friend</h2>
 
         {/* 🔥 DISABLE THE BUTTON */}
-        <button>submit</button>
+        <button disabled={disabled}>submit</button>
 
         <div className='errors'>
           {/* 🔥 RENDER THE VALIDATION ERRORS HERE */}
@@ -69,21 +69,22 @@ export default function FriendForm(props) {
         {/* ////////// RADIO BUTTONS ////////// */}
         <label>Single
           <input
-            checked={values.civil === 'single'}
+            checked={values.civil === 'Single'}
             value='Single'
             onChange={onInputChange}
             name='civil'
             type='radio'
-            />
+          />
         </label>
+
         <label>Married
           <input
-            checked={values.civil === 'married'}
+            checked={values.civil === 'Married'}
             value='Married'
             onChange={onInputChange}
-            name='married'
+            name='civil'
             type='radio'
-            />
+          />
         </label>
       </div>
 
@@ -95,25 +96,27 @@ export default function FriendForm(props) {
         {/* ////////// CHECKBOXES ////////// */}
         <label>Hiking
           <input
-            type='checkbox'
-            onChange={onCheckboxChange}
             name='hiking'
+            type="checkbox"
+            onChange={onCheckboxChange}
             checked={values.hobbies.hiking}
           />
         </label>
+
         <label>Reading
           <input
-            type='checkbox'
-            onChange={onCheckboxChange}
             name='reading'
+            type="checkbox"
+            onChange={onCheckboxChange}
             checked={values.hobbies.reading}
           />
         </label>
+
         <label>Coding
           <input
-            type='checkbox'
-            onChange={onCheckboxChange}
             name='coding'
+            type="checkbox"
+            onChange={onCheckboxChange}
             checked={values.hobbies.coding}
           />
         </label>
