@@ -21,7 +21,7 @@ const initialFormValues = {
   ///// RADIO BUTTONS /////
   civil: '',
   ///// CHECKBOXES /////
-  hobbies: {
+  hobbies: {                   // ['hiking', 'reading']
     hiking: false,
     reading: false,
     coding: false,
@@ -58,7 +58,6 @@ export default function App() {
       })
       .catch(err => {
         debugger
-        console.log(err)
       })
   }
 
@@ -72,11 +71,10 @@ export default function App() {
       })
       .catch(err => {
         debugger
-        console.log(err)
       })
-      .finally(
+      .finally(() => {
         setFormValues(initialFormValues)
-      )
+      })
   }
 
   //////////////// EVENT HANDLERS ////////////////
@@ -98,13 +96,13 @@ export default function App() {
     // 🔥 STEP 7- IMPLEMENT!
     // a) pull the `name` of the checkbox from the event
     // b) pull whether `checked` true or false, from the event
-    // c) set a new state for the whole form
     const { name, checked } = evt.target
+    // c) set a new state for the whole form
     setFormValues({
       ...formValues,
       hobbies: {
-        ...formValues.hobbies, 
-        [name]: checked
+        ...formValues.hobbies,
+        [name]: checked,
       }
     })
   }
@@ -119,11 +117,10 @@ export default function App() {
       civil: formValues.civil,
       // 🔥 STEP 8- WHAT ABOUT HOBBIES?
       hobbies: Object.keys(formValues.hobbies)
-        .filter(hobbyName => {
-          return formValues[hobbyName]
-      })
+        .filter(hobbieName => (formValues[hobbieName] === true))
     }
     // 🔥 STEP 9- POST NEW FRIEND USING HELPER
+    postNewFriend(newFriend)
   }
 
   //////////////// SIDE EFFECTS ////////////////
