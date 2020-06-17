@@ -6,14 +6,17 @@ const formSchema = Yup.object().shape({
       .string()
       .email("Must be a valid email address.")
       .required("Must include email address."),
-    password: Yup
+    username: Yup
       .string()
-      .min(6, "Passwords must be at least 6 characters long.")
-      .required("Password is Required"),
-    terms: Yup
-      .boolean()
-      .oneOf([true], "You must accept Terms and Conditions")
+      .min(3, "Username must be at least 6 characters long.")
+      .required("Username is Required"),
+    role: Yup
+      .string()
+      .oneOf(['Instructor', 'Student', 'TL', 'Alumni'], "Please select a role"),
       // required isn't required for checkboxes.
+    civil: Yup
+      .string()
+      .oneOf(['Married', 'Single'], "Please select your civil status"),
   });
   
   
