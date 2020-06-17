@@ -118,7 +118,7 @@ export default function App() {
       role: formValues.role,
       civil: formValues.civil,
       // 🔥 STEP 8- WHAT ABOUT HOBBIES?
-      hobbies: formValues.hobbies.
+      hobbies: Object.keys(formValues.hobbies)
     }
     // 🔥 STEP 9- POST NEW FRIEND USING HELPER
   }
