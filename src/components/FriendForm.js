@@ -70,21 +70,20 @@ export default function FriendForm(props) {
         <label>Single
           <input
             checked={values.civil === 'single'}
-            value='single'
+            value='Single'
             onChange={onInputChange}
             name='civil'
             type='radio'
             />
         </label>
-        <input
+        <label>Married
+          <input
             checked={values.civil === 'married'}
-            value='married'
+            value='Married'
             onChange={onInputChange}
             name='married'
             type='radio'
             />
-        <label>Married
-
         </label>
       </div>
 
@@ -95,15 +94,28 @@ export default function FriendForm(props) {
         {/* ////////// CHECKBOXES ////////// */}
         {/* ////////// CHECKBOXES ////////// */}
         <label>Hiking
-
+          <input
+            type='checkbox'
+            onChange={onCheckboxChange}
+            name='hiking'
+            checked={values.hobbies.hiking}
+          />
         </label>
-
         <label>Reading
-
+          <input
+            type='checkbox'
+            onChange={onCheckboxChange}
+            name='reading'
+            checked={values.hobbies.reading}
+          />
         </label>
-
         <label>Coding
-
+          <input
+            type='checkbox'
+            onChange={onCheckboxChange}
+            name='coding'
+            checked={values.hobbies.coding}
+          />
         </label>
       </div>
     </form>
